@@ -213,7 +213,7 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <TurntableScene
+      {/* <TurntableScene
         activeIndex={activeIndex}
         activeSection={activeSection}
         selectedItemIndex={selectedItemIndex}
@@ -221,7 +221,11 @@ export default function App() {
         setActiveIndex={setActiveIndex}
         isSleeveOpen={isSleeveOpen}
         setIsSleeveOpen={setIsSleeveOpen}
-      />
+      /> */}
+
+      <div style={{ color: "white", padding: "2rem" }}>
+        TurntableScene temporarily disabled
+      </div>
 
       <Overlay
         sections={sections}
