@@ -23,7 +23,7 @@ export default function Overlay({
         </div>
 
         <div className="top-actions">
-          <a href="/resume.pdf" download className="resume-btn">
+          <a href={`${import.meta.env.BASE_URL}resume.pdf`} download className="resume-btn">
             Download Resume
           </a>
         </div>
