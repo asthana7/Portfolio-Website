@@ -2,8 +2,6 @@ import { useEffect, useMemo, useState} from "react"
 import TurntableScene from "./components/TurntableScene"
 import Overlay from "./components/Overlay"
 import "./index.css"
-import RecordCrateNav from "./components/RecordCrateNav"
-
 
 const sections = [
   {
@@ -191,7 +189,7 @@ const sections = [
     {
       label: "Resume",
       value: "Download PDF",
-      href: "/resume.pdf"
+      href: `${import.meta.env.BASE_URL}resume.pdf`
     },
     {
       label: "Spotify Playlist",
