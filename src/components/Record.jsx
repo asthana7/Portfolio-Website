@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber"
 import { useEffect, useMemo, useRef, useState } from "react"
 import * as THREE from "three"
 
-export default function Record({ activeSection, activeIndex }) {
+export default function Record({ activeSection = {}, activeIndex }) {
   const groupRef = useRef()
   const labelMatRef = useRef()
   const speedRef = useRef(0)
@@ -12,6 +12,7 @@ export default function Record({ activeSection, activeIndex }) {
   const isDraggingRef = useRef(false)
   const lastPointerXRef = useRef(0)
   const dragVelocityRef = useRef(0)
+  const theme = activeSection?.theme || {}
 
   const grooves = useMemo(() => {
     const values = []
@@ -138,7 +139,7 @@ export default function Record({ activeSection, activeIndex }) {
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 0.051, 0]}>
         <ringGeometry args={[1.2, 3.0, 128]} />
         <meshBasicMaterial
-          color={activeSection?.theme?.waveformColor || "#2c3e70"}
+          color = {theme.waveformColor || "#2c3e70"}
           transparent
           opacity={0.08}
           side={THREE.DoubleSide}
@@ -180,3 +181,4 @@ ${activeSection?.title || "About Me"}`}
     </group>
   )
 }
+
